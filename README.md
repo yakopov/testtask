@@ -2,7 +2,7 @@
 
 This project implements a registration wizard consisting of two steps. The backend is built using C# Web API (CQRS) with Entity Framework Core and SQLite, while the frontend is a single-page application (SPA) developed with Angular.
 
-![UI Preview](/assets/registration-wizard.png)
+![UI Preview](https://github.com/user-attachments/assets/c5a910fe-1d02-4461-a8d0-672b14b9a09d)
 
 ### Features
 
