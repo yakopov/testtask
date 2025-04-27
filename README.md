@@ -49,6 +49,12 @@ The solution is organized into several projects:
 15. **Akoyur.TestTask.Infrastructure.Database**: Implements basic database functionality using **CQRS**.
 16. **Akoyur.TestTask.Mappings**: Contains model mappings.
 
+### How to Run
+
+1. Open the solution in Visual Studio.
+2. Press **Ctrl+F5** to run the **Akoyur.TestTask.WebAPI** project.
+3. Press **Ctrl+F5** to run the **Akoyur.TestTask.SPAWebApp** project.
+
 ---
 
 ### Thank You!
