@@ -21,7 +21,8 @@ public class CreateUserRequestValidator : AbstractValidator<CreateUserRequest>
 
         RuleFor(x => x.Password)
             .NotEmpty().WithMessage("Password is required.")
-            .MaximumLength(30).WithMessage("Password must not exceed 30 characters.");
+            .Matches(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{2,30}$")
+            .WithMessage("Password must contain at least one letter, one digit, and be between 2 and 30 characters long."); ;
 
         RuleFor(x => x.ProvinceId)
             .GreaterThan(0).WithMessage("Invalid province identifier.");

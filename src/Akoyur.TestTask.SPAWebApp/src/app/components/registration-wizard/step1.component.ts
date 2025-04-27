@@ -22,7 +22,7 @@ export class Step1Component implements OnInit {
   constructor(private fb: FormBuilder, private registrationStateService: RegistrationStateService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^.{3,400}$/)]],
-      password: ['', [Validators.required, Validators.pattern(/^.{1,30}$/)]],
+      password: ['', [Validators.required, Validators.pattern(/^(?=(.*[A-Za-z]))(?=(.*\d))[A-Za-z\d]{2,30}$/)]],
       confirmPassword: ['', Validators.required],
       termsAccepted: [false, Validators.requiredTrue]
     }, { validators: this.passwordsMatch });
