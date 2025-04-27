@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onNext()">
+  <h3>Step 1</h3>
+  <div class="field">
+    <div>
+      <label>Login: <span class="hint" *ngIf="isCheckingEmail">Checking...</span></label>
+    </div>
+    <input type="email" placeholder="Email" formControlName="email" maxlength="400" />
+    <div class="error">
+      <span *ngIf="fieldErrors['email']">{{ fieldErrors['email'] }}</span>
+      <span *ngIf="!emailTaken && form.get('email')?.invalid && form.get('email')?.touched">Invalid email</span>
+      <span *ngIf="emailTaken">Email is already taken</span>
+    </div>
+  </div>
+  <div class="field">
+    <div>
+      <label>Password:</label>
+    </div>
+    <input type="password" formControlName="password" maxlength="30" />
+    <div class="error">
+      <span *ngIf="fieldErrors['password']">{{ fieldErrors['password'] }}</span>
+      <span *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Specify a password from 1 to 30 characters long</span>
+    </div>
+  </div>
+  <div class="field">
+    <div>
+      <label>Confirm Password:</label>
+    </div>
+    <input type="password" formControlName="confirmPassword" />
+    <div *ngIf="form.hasError('notMatching') && form.get('confirmPassword')?.touched" class="error">
+      Passwords do not match
+    </div>
+  </div>
+  <div class="field">
+    <label>
+      <input type="checkbox" formControlName="termsAccepted" />
+      I agree to terms
+    </label>
+    <div *ngIf="form.get('termsAccepted')?.invalid && form.get('termsAccepted')?.touched" class="error">
+      You must agree
+    </div>
+  </div>
+  <div class="field">
+    <button type="submit" [disabled]="isCheckingEmail">Next</button>
+  </div>
+</form>

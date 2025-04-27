@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Akoyur.TestTask.Abstractions\Akoyur.TestTask.Abstractions.csproj" />
+    <ProjectReference Include="..\Akoyur.TestTask.ApiModels\Akoyur.TestTask.ApiModels.csproj" />
+    <ProjectReference Include="..\Akoyur.TestTask.Dto\Akoyur.TestTask.Dto.csproj" />
+    <ProjectReference Include="..\Akoyur.TestTask.Helpers\Akoyur.TestTask.Helpers.csproj" />
+    <ProjectReference Include="..\Akoyur.TestTask.Infrastructure.Database\Akoyur.TestTask.Infrastructure.Database.csproj" />
+  </ItemGroup>
+
+</Project>

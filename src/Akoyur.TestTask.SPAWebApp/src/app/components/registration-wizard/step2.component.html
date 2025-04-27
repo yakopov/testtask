@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onSave()">
+  <h3>Step 2</h3>
+  <div class="field">
+    <div>
+      <label>Country: <span class="hint" *ngIf="isCountriesLoading">Loading...</span></label>
+    </div>
+    <select formControlName="countryId">
+      <option value="">-- Select country --</option>
+      <option *ngFor="let country of (countries$ | async)?.items" [value]="country.id">
+        {{ country.name }}
+      </option>
+    </select>
+    <div class="error" *ngIf="form.get('countryId')?.invalid && form.get('countryId')?.touched">
+      Country is required.
+    </div>
+  </div>
+  <div class="field">
+    <div>
+      <label>Province: <span class="hint" *ngIf="isProvincesLoading">Loading...</span></label>
+    </div>
+    <select formControlName="provinceId">
+      <option *ngFor="let province of (provinces$ | async)?.items" [value]="province.id">
+        {{ province.name }}
+      </option>
+    </select>
+    <div class="error" *ngIf="form.get('provinceId')?.invalid && form.get('provinceId')?.touched">
+      Province is required.
+    </div>
+  </div>
+  <button type="submit" [disabled]="isCountriesLoading || isProvincesLoading">Save</button>
+</form>

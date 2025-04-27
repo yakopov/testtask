@@ -1,0 +1,15 @@
+<div class="container">
+  <div *ngIf="currentStep === 0">
+    <div>Please wait...</div>
+  </div>
+  <div *ngIf="currentStep === 1">
+    <app-step1 [fieldErrors]="fieldErrors" (next)="onStep1Complete()"></app-step1>
+  </div>
+  <div *ngIf="currentStep === 2">
+    <app-step2 (save)="onStep2Complete()"></app-step2>
+    <button type="button" (click)="goBack()">← Back</button>
+  </div>
+  <div *ngIf="currentStep === 3">
+    <app-step3 [userId]="userId"></app-step3>
+  </div>
+</div>

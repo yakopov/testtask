@@ -1,0 +1,48 @@
+body,
+option {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  margin: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.success {
+  color: green;
+}
+
+.hint{
+    font-size: 12px;
+    font-style: italic;
+    color: blue;
+}
+
+label{
+    font-weight: bold;
+}
+
+input, button, select {
+  padding: 10px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+select {
+  width: 300px;
+}
+
+form .field {
+  margin: 10px 0px;
+}
+
+button {
+  margin: 10px 0px;
+  min-width: 140px;
+}
